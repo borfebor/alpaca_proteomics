@@ -30,18 +30,18 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 | Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Down                | 2.43        | 1.51      |
 | Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Down                | 5.71        | 8.53      |
 
-- **Condition**:
-- **SampleVolume**:
-- **ProteinConcentration**:
-- **AmountMS**:
-- **CellsPerML**:
-- **TotalCultureVolume**:
-- **ProteinSRM**:
-- **fmolSRM**:
-- **Enrichment**:
-- **EnrichmentDirection**:
-- **StdDilution**:
-- **StdVolume**:
+- **Condition**: Condition in which 
+- **SampleVolume**: 
+- **ProteinConcentration**: Determined protein concentration (µg/µl) in the sample.
+- **AmountMS**: Protein amount (µg) injected in the MS.
+- **CellsPerML**: Measured cells per mL of culture.
+- **TotalCultureVolume**: Total cultivation volume (µL).
+- **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
+- **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
+- **Enrichment** (Optional): Boolean (True or False). Samples that have been enriched should be specified as True
+- **EnrichmentDirection** (Optional): UP or DOWN. 
+- **StdDilution** (Optional): This parameter specifies how many times the stock solution of enrichment standards has been diluted before adding it to the sample. If the standards were not diluted before addition, specify 1. Only used when the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added. 
+- **StdVolume** (Optional): Volume of enrichment standards (µL) added to the sample. Only used in case the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added.
 
 
 ## Data Importation & Pre-processing
