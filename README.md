@@ -90,4 +90,4 @@ This approach was described on [Ferrero-Bordera et al. 2024](https://doi.org/10.
 
 This module connects the protein amounts quantified in the sample and the sample preparation. Thus, allowing to calculate protein amounts to the original state (e.g. bacterial culture, raw culture supernatant). This step brings deeper insights to the user based on the known experimental parameters, yielding high valuable data (e.g., molecules per cell, fmol / µmol of protein extract)
 
-> alpaca.**wool**():
+> alpaca.**wool**(): this function integrates the sample preparation details with the quantified proteins injected in the MS.
