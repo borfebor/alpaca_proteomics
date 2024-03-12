@@ -18,7 +18,7 @@ Required packages and last tested working versions:
 
 - **Protein Groups** file from MaxQuant as `.csv`, `.txt` or `.xlsx`.
 - **Quantification Standards** file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & StdConcentration (µg/µl). See Quantification for more details.
-- **Enrichment Standards** file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & Mix concentration (µg/µl). See Enrichment for more details.
+- **Enrichment Standards** (Optional) file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & Mix concentration (µg/µl). See Enrichment for more details.
 
 #### Labwork input
 
