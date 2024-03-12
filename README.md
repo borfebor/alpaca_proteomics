@@ -33,7 +33,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 | Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Down                | 5.71        | 8.53      |
 
 - **Condition**: Condition in which 
-- **SampleVolume**: 
+- **SampleVolume**: Protein extract volume (µL) used for protein digestion.
 - **ProteinConcentration**: Determined protein concentration (µg/µl) in the sample.
 - **AmountMS**: Protein amount (µg) injected in the MS.
 - **CellsPerML**: Measured cells per mL of culture.
