@@ -54,15 +54,6 @@ Functions for data import, cleaning and pre-processing.
 
 ## Protein Quantification
 
-| Accession | MW (kDa) | Amount (fmol) |
-|-----------|----------|---------------|
-| P02768    | 10.1     | 50            |
-| Q9Y6K9    | 65.8     | 100           |
-| P05067    | 32.5     | 25            |
-| O75475    | 48.2     | 75            |
-| Q00653    | 20.9     | 30            |
-
-
 ### Proteome fraction enrichment (Optional)
 
 In case the study focuses on a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation and enrichment step was performed. This module allows to translation of the enrichment step to the data based on how the samples were prepared. 
