@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='alpaca',
+    name='alpaca proteomics',
     packages=find_packages(include=['alpaca_proteomics']),
     version='0.9.98',
     description='Absolute Protein Quantification python library',
