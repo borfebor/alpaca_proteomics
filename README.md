@@ -1,6 +1,9 @@
 ![ALPACA](https://github.com/borfebor/alpaca_app/blob/62b6915c377ccc9af4bc85aed6e715ea27c583b3/ALPACA_LOGO2.png)
 
 > An app by [B. Ferrero-Bordera](https://www.linkedin.com/in/borjaferrero/)
+
+![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
+
 ### Requirements
 
 Required packages and last tested working versions:
