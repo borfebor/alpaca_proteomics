@@ -24,7 +24,7 @@ Required packages and last tested working versions:
 
 Experimental details (in our example `params.txt`) can be added as txt, csv or xlsx formats. This file can include the columns described in the following table:
 
-**Table 2.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentDirection, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
+**Table 1.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentDirection, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
 
 | Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentDirection | StdDilution | StdVolume |
 |-------------|--------------|----------------------|----------|------------|--------------------|------------|---------|------------|---------------------|-------------|-----------|
@@ -50,13 +50,27 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 Functions for data import, cleaning and pre-processing.
 > alpaca.**eats**(`File`): this function is meant to offer flexibility on the ProteinGroup file importation as some scientists could have the data in a `.txt`, `.csv` or `.xlsx`.
 
-> alpaca.**spits**(`DataFrame`): formatter function aims to give coherence on the imported data, as it could be that MaxQuant output organisation is changed by the user or another software like Perseus. It returns our formatted `DataFrame`, and 2 lists: `columns` which contain all df.columns after formatting, and `default` which is a list with all suggested columns for dataframe slicing.
+> alpaca.**spits**(`DataFrame`): this function aims to give coherence to the imported data, as it could be that MaxQuant output organisation is changed by the user or another software like Perseus. It returns our formatted `DataFrame`, and 2 lists: `columns` which contain all df.columns after formatting, and `default` which is a list with all suggested columns for dataframe slicing.
 
 ## Protein Quantification
 
+Absolute quantification using Alpaca is optimised for label-free methods, relying on the addition of a set of anchor proteins at a known amount. 
+
+**Table 2.** Format for the file describing the stock solution of anchor proteins.
+
+| Accession  | MW (kDa) | Amount (fmol) |
+|------------|---------:|--------------:|
+| P02768     |   10.1   |         50    |
+| Q9Y6K9     |   65.8   |        100    |
+| P05067     |   32.5   |         25    |
+| O75475     |   48.2   |         75    |
+| Q00653     |   20.9   |         30    |
+
+> alpaca.**census**(): calculates the abundances in moles based on added anchor proteins (Table 2). Anchor proteins should be specified in a dataframe using the format described in Table 2.
+
 ### Proteome fraction enrichment (Optional)
 
-In case the study focuses on a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation and enrichment step was performed. This module allows to translation of the enrichment step to the data based on how the samples were prepared. 
+In case the study focuses on a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation and enrichment step was performed. This module allows to connect the enrichment step to the data based on how the samples were prepared. 
 
 `Enrichment factors` are calculated based on the fmol quantified in the enriched sample to the raw or non-enriched sample:
 
@@ -68,7 +82,7 @@ For that purpose, 2 strategies are currently covered under our pipeline:
 
 **1. The quantification of specific proteins of the analysed fraction on both before and after the enrichment step using Targeted MS (SRM).** 
 
-This strategy was described on [Antelo-Varela et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31424929/) and relies on using external protocols (e.g., Skyline) to quantify the enrichment step. Enrichment factors can be added to the parameters table under the column `Enrichment_Factor`. Additionally, the SRM quantified amount for a given protein can be added on the columns `ProteinSRM` (Accession of the quantified protein) and `fmolSRM` (Quantified fmol in the analysed proteome fraction).
+This strategy was described by [Antelo-Varela et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31424929/) and relies on using external protocols (e.g., Skyline) to quantify the enrichment step. Enrichment factors can be added to the parameters table under the column `Enrichment_Factor`. Additionally, the SRM quantified amount for a given protein can be added on the columns `ProteinSRM` (Accession of the quantified protein) and `fmolSRM` (Quantified fmol in the analysed proteome fraction).
 
 **2. The addition of whole proteins at a known concentration before performing the enrichment step.**
 
@@ -84,7 +98,7 @@ This approach was described by [Ferrero-Bordera et al. 2024](https://doi.org/10.
 | O75475    |     48.2 |                     3.0  |
 | Q00653    |     20.9 |                     2.0  |
 
-> alpaca.**gathers**(): calculates the enrichment factors for each specified fraction based on the sample preparation (Table 2) and the added standards to the sample. Standards should be specified in a dataframe using the format described in Table 3.
+> alpaca.**gathers**(): calculates the enrichment factors for each specified fraction based on the sample preparation (Table 1) and the added standards to the sample. Standards should be specified in a dataframe using the format described in Table 3.
 
 ## Data Integration
 
