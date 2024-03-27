@@ -56,7 +56,7 @@ Functions for data import, cleaning and pre-processing.
 
 Absolute quantification using Alpaca is optimised for label-free methods, relying on the addition of a set of anchor proteins at a known amount. 
 
-**Table 1.** Format for the file describing the stock solution of anchor proteins.
+**Table 2.** Format for the file describing the stock solution of anchor proteins.
 
 | Accession  | MW (kDa) | Amount (fmol) |
 |------------|---------:|--------------:|
