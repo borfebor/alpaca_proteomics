@@ -4,6 +4,14 @@
 
 ![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
 
+### Getting started
+
+```Python
+pip install Alpaca-proteomics
+
+from alpaca_proteomics import alpaca
+```
+
 ### Requirements
 
 Required packages and last tested working versions:
