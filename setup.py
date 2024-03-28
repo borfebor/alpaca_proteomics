@@ -18,5 +18,6 @@ setup(
             'scikit-learn',
             'scipy',
             'seaborn',
+            'thefuzz',
             'XlsxWriter']
 )
