@@ -7,7 +7,7 @@
 ### Getting started
 
 ```Python
-pip install Alpaca-proteomics
+pip install alpaca-proteomics
 
 from alpaca_proteomics import alpaca
 ```
