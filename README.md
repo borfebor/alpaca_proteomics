@@ -8,7 +8,9 @@
 
 ```Python
 pip install alpaca-proteomics
+```
 
+```Python
 from alpaca_proteomics import alpaca
 ```
 
