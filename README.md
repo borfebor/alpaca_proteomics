@@ -55,11 +55,11 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 
 **Table 1.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentDirection, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
 
-| Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentMode | StdDilution | StdVolume |
+| Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentDirection | StdDilution | StdVolume |
 |-------------|--------------|----------------------|----------|------------|--------------------|------------|---------|------------|---------------------|-------------|-----------|
-| Cond1_t0    | 2.31         | 2.99                 | 9.67     | 4.54       | 7.54               | TNAMLN     | 4.44    | False      |                | 3.96        | 1.22      |
-| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Amplification                | 2.43        | 1.51      |
-| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Sampling                | 5.71        | 8.53      |
+| Cond1_t0    | 2.31         | 2.99                 | 9.67     | 4.54       | 7.54               | TNAMLN     | 4.44    | False      | Down                | 3.96        | 1.22      |
+| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Down                | 2.43        | 1.51      |
+| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Down                | 5.71        | 8.53      |
 
 - **Condition**: Condition in which 
 - **SampleVolume**: Protein extract volume (µL) used for protein digestion.
@@ -70,7 +70,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 - **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
 - **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
 - **Enrichment** (Optional): Boolean (True or False). Samples that have been enriched should be specified as True
-- **EnrichmentMode** (Optional): “Amplification” or “Sampling”. “Amplification” corresponds to samples in which the amounts of the target proteins after the enrichment are higher compared to the original proteome (e.g., Membrane proteome). “Sampling” applies to samples in which a fraction of the total target proteome is concentrated to facilitate sample preparation (e.g., exoproteome).
+- **EnrichmentDirection** (Optional): UP or DOWN. 
 - **StdDilution** (Optional): This parameter specifies how many times the stock solution of enrichment standards has been diluted before adding it to the sample. If the standards were not diluted before addition, specify 1. Only used when the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added. 
 - **StdVolume** (Optional): Volume of enrichment standards (µL) added to the sample. Only used in case the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added.
 
@@ -79,7 +79,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 Functions for data import, cleaning and pre-processing.
 > alpaca.**eats**(`File`): this function is meant to offer flexibility on the ProteinGroup file importation as some scientists could have the data in a `.txt`, `.csv` or `.xlsx`.
 
-> alpaca.**spits**(`DataFrame`): this function aims to give coherence to the imported data, as it could be that ProteinGroups file organisation is changed by the user or another software like Perseus. It returns our formatted `DataFrame`, and 2 lists: `columns` which contain all df.columns after formatting, and `default` which is a list with all suggested columns for dataframe slicing.
+> alpaca.**spits**(`DataFrame`): this function aims to give coherence to the imported data, as it could be that MaxQuant output organisation is changed by the user or another software like Perseus. It returns our formatted `DataFrame`, and 2 lists: `columns` which contain all df.columns after formatting, and `default` which is a list with all suggested columns for dataframe slicing.
 
 ## Protein Quantification
 
