@@ -1,109 +1,286 @@
-{% extends "base.html" %}
-{% load boxes %}
-{% load strip_minor_version from download_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/favicon.ico"/>
+    <title>ITensor</title>
+    <link rel="stylesheet" href="css/mystyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
 
-{% block page_title %}Our Documentation | {{ SITE_INFO.site_name }}{% endblock %}
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
 
-{% block body_attributes %}class="python documentation"{% endblock %}
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <a class="navbar-item has-text-weight-bold">ITensor</a>
+    </a>
 
-{% block header_content %}
-                <div class="documentation-banner">
-                    {% box 'documentation-banner' %}
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
-                </div>
-{% endblock header_content %}
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
 
+      <div onclick="" class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Documentation
+        </a>
 
-{% block content %}
-                <div class="row">
+        <div class="navbar-dropdown">
+          <a href="https://itensor.github.io/ITensors.jl/dev" class="navbar-item">
+            Julia (Recommended)
+          </a>
+          <a href="/docs.cgi" class="navbar-item">
+            C++
+          </a>
+          <a href="https://www.scipost.org/SciPostPhysCodeb.4" class="navbar-item">
+            ITensor Paper
+          </a>
+        </div>
+      </div>
 
-        		    <div class="small-widget beginner-widget">
-                        {% box 'documentation-beginners' %}
+      <a href="/news/" class="navbar-item">
+        News
+      </a>
 
-                    </div>
+      <a href="/codes/" class="navbar-item">
+        Codes
+      </a>
 
-                    <div class="small-widget moderate-widget">
-                        {% box 'documentation-moderate' %}
+      <a href="https://itensor.discourse.group" class="navbar-item">
+        Discuss
+      </a>
 
-                    </div>
+      <div onclick="" class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          About
+        </a>
 
-                    <div class="small-widget advanced-widget">
-                        {% box 'documentation-advanced' %}
+        <div class="navbar-dropdown">
+          <a href="/about/" class="navbar-item">
+            About ITensor
+          </a>
+          <a href="/citing/" class="navbar-item">
+            Citing ITensor
+          </a>
+          <a href="/faq/" class="navbar-item">
+            Frequently Asked Questions (FAQ)
+          </a>
+          <a href="http://itensor.org/docs.cgi?page=papers" class="navbar-item">
+            Papers Using ITensor
+          </a>
+        </div>
+      </div>
 
-                    </div>
+    </div>
 
-                    <div class="small-widget general-widget last">
-                        {% box 'documentation-general' %}
+  </div>
+  </nav>
 
-                    </div>
+  <section class="hero is-small is-primary">
 
-                </div>
+  <div class="hero-body">
+    <div class="container has-text-centered is-capitalized">
+      <p class="title is-capitalized">
+        ITensor
+      </p>
+      <p>
+        <img style="height:120px;" src="/img/ITensorMan_square_alpha.png"/>
+      </p>
+      <p class="subtitle">
+      High-performance tensor software <br/>inspired by tensor diagrams
+      </p>
+    </div>
+  </div>
 
-
-                <div class="row">
-
-                    <div id="docs-by-version" class="medium-widget">
-
-                        <h2 class="widget-title"><span aria-hidden="true" class="icon-versions"></span>Python 3.x Resources</h2>
-                        <ul>
-                            <li>
-                                {% if latest_python3 %}
-                                <a href="https://docs.python.org/3/">Browse Python {{ latest_python3.get_version }} Documentation</a>
-                                {% else %}
-                                <a href="https://docs.python.org/3/">Browse Current Documentation</a>
-                                {% endif %}
-                                - <a href="https://docs.python.org/3/py-modindex.html">(Module Index)</a>
-                                <ul>
-                                    <li>
-                                        {% if latest_python3 %}
-                                        <a href="https://docs.python.org/3/whatsnew/{{ latest_python3.get_version|strip_minor_version }}.html">What's new in Python {{ latest_python3.get_version|strip_minor_version }}</a>
-                                        {% else %}
-                                        <a href="https://docs.python.org/3/whatsnew/index.html">What's new in Python 3</a>
-                                        {% endif %}
-                                    </li>
-                                    <li><a href="https://docs.python.org/3/tutorial/index.html">Tutorial</a></li>
-                                    <li><a href="https://docs.python.org/3/library/index.html">Library Reference</a></li>
-                                    <li><a href="https://docs.python.org/3/reference/index.html">Language Reference</a></li>
-                                    <li><a href="https://docs.python.org/3/extending/index.html">Extending and Embedding</a></li>
-                                    <li><a href="https://docs.python.org/3/c-api/index.html">Python/C API</a></li>
-                                    <li><a href="https://docs.python.org/3/using/index.html">Using Python</a></li>
-                                    <li><a href="https://docs.python.org/3/howto/index.html">Python HOWTOs</a></li>
-                                    <li><a href="https://docs.python.org/3/glossary.html">Glossary</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="https://docs.python.org/3/search.html">Search the online docs</a></li>
-                            <li><a href="https://docs.python.org/3/download.html">Download Current Documentation</a> (multiple formats are available, including typeset versions for printing.)</li>
-                        </ul>
-                    </div>
-
-                    <div class="medium-widget last">
-                        <h2 class="widget-title"><span aria-hidden="true" class="icon-versions"></span>Porting from Python 2 to Python 3</h2>
-                        <ul>
-                          <li><a href="https://www.python.org/doc/sunset-python-2/">FAQ: Sunsetting Python 2</a></li>
-                          <li><a href="https://www.python.org/dev/peps/pep-0373/">Final Python 2.7 Release Schedule</a></li>
-                          <li><a href="https://python3statement.github.io/">Python 3 Statement</a></li>
-                          <li>
-                            <a href="https://docs.python.org/3/howto/pyporting.html">Porting Python 2 Code to Python 3</a>
-                            <ul>
-                              <li><a href="https://pypi.org/project/caniusepython3/">Determine what projects are blocking you from porting to Python 3</a></li>
-                              <li><a href="https://wiki.python.org/moin/PythonConsulting/Python%202%20support%20and%20migration">Python 2 Support and Migration</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <div class="user-feedback level-general">
-                    {% box 'usermessage-helplink' %}
-
-                </div>
+  </section>
 
 
-                <div class="python-needs-you-widget">
-                    <div class="python-logo"></div>
-                    {% box 'widget-weneedyou' %}
+  <!--
+    Begin Code Examples Section
+  -->
+  <section class="section"><div class="container is-max-desktop">
 
-                </div>
+    <p class="title is-4">Code Examples</p>
 
-{% endblock content %}
+    <p>Contracting two ITensors</p>
+
+    <div class="block"><div class="columns is-vcentered">
+      <div class="column has-text-centered">
+        <img width="320px" src="/img/contraction.png"/>
+      </div>
+      <div class="column">
+        <pre class="has-background-black-ter"><code class="has-text-white-ter">C = A * B</code></pre>
+      </div>
+    </div></div>
+
+    <p>Factoring an ITensor</p>
+
+    <div class="block"><div class="columns is-vcentered">
+      <div class="column has-text-centered">
+        <img width="320px" src="/img/svd.png"/>
+      </div>
+      <div class="column">
+        <pre class="has-background-black-ter"><code class="has-text-white-ter">U,S,V = svd(T,i,j)</code></pre>
+
+      </div>
+    </div></div>
+
+
+    <p>
+    To view more code examples, <a href="/examples/">click here</a>.
+    </p>
+  </div></section>
+
+  <!--
+    End Code Examples Section
+  -->
+
+
+  <!--
+    Begin Installing Section
+  -->
+  <a name="installing"></a>
+  <section class="section"><div class="container is-max-desktop">
+
+    <p class="title is-4">Installing</p>
+
+    <p class="mb-2">
+    The Julia version of ITensor (recommended) is easy to install through the Julia package manager:
+    </p>
+
+    <p>
+    <pre class="p-3 has-background-black-ter"><code class="has-text-white-ter">$ julia
+<span style="color:#64CE91;">julia></span> ]
+<span style="color:#528CE3;">pkg></span> add ITensors</code></pre>
+    </p>
+    <br/>
+
+    <p class="mb-2">
+    <br/>
+    To install other packages such as ITensorMPS, follow the same steps just replacing "ITensors" with the package name.
+    </p>
+
+    <!--
+    <br/>
+    <p class="mb-2">
+    For the C++ version of ITensor see <a href="/docs.cgi?vers=cppv3&page=install">C++ installation instructions</a>.
+    </p>
+    <p>
+    To learn more about which version may be best for you to use and why,
+    please <a href="https://itensor.github.io/ITensors.jl/dev/faq/JuliaAndCpp.html">read this FAQ page</a> about Julia versus C++ ITensor.
+    </p>
+    -->
+
+  </div></section>
+  <!--
+    End Installing Section
+  -->
+
+  <!--
+    Begin Features Section
+  -->
+  <a name="features"></a>
+  <section class="section"><div class="container is-max-desktop">
+
+    <p class="title is-4">What Makes ITensor Unique?</p>
+
+    <div class="block"><div class="columns">
+      <div class="column">
+        <img width="240px" src="/img/itensor_03.gif"/>
+        <p class="title is-5">Intelligent Indices</p>
+        <p>
+        The indices of an ITensor have unique identities. When contracting two ITensors,
+        matching indices "find" each other and contract automatically.
+        Adding two ITensors is literally as easy as A+B. Groups of ITensors can
+        be arranged into networks which know their topology.
+        </p>
+      </div>
+      <div class="column">
+        <img width="240px" src="/img/itensor_06.gif"/>
+        <p class="title is-5">Quantum Number Conserving ITensors</p>
+        <p>
+        ITensors can be quantum number conserving (invariant under group symmetries)
+        by storing block-sparse data and other information. Quantum number conserving 
+        ITensors are nearly as easy to use as regular, dense ITensors.
+        </p>
+      </div>
+    </div></div>
+
+    <div class="block"><div class="columns">
+      <div class="column">
+        <img width="240px" src="/img/itensor_01.gif"/>
+        <p class="title is-5">Quantum Physics Tools</p>
+        <p>
+        Easily turn human-readable sums of operators into a compressed 
+        MPO tensor network, a quantum circuit, and more. 
+        These intermediate formats can be used to find ground states, 
+        perform real-time or imaginary-time evolution, and other tasks.
+        </p>
+      </div>
+      <div class="column">
+        <img width="240px" src="/img/itensor_02.gif"/>
+        <p class="title is-5">MPS and MPO Algorithms</p>
+        <p>
+        ITensor includes a full set of algorithms involving matrix product state (MPS) 
+        and matrix product operators (MPO), such as state-of-the-art 
+        <a href="https://itensor.github.io/ITensors.jl/dev/tutorials/DMRG.html">DMRG</a>
+        and 
+        <a href="https://itensor.github.io/ITensors.jl/dev/tutorials/MPSTimeEvolution.html">time-evolution codes</a>, and algorithms for summing, multiplying, 
+        and optimizing MPS and MPOs.
+        </p>
+      </div>
+    </div></div>
+
+
+  </div></section>
+  <!--
+    End Features Section
+  -->
+
+  <br/>
+  <br/>
+
+  <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <a href="https://github.com/ITensor/ITensors.jl">ITensor Source on Github</a>
+      &middot; 
+      <a href="https://twitter.com/itensorlib">Twitter @ITensorLib</a>
+      &middot; 
+      <a href="https://github.com/ITensor/ITensorWebsite">Website Source on Github</a>
+      <br/>
+      &copy; 2022 ITensor Collaboration.
+      <br/>
+      Animations by Sherry Choi and Lucy Reading-Ikkanda.
+    </p>
+  </div>
+  </footer>
+
+
+  </body>
+
+<script>
+$(document).ready(function() {
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+  });
+
+});
+</script>
+
+
+</html>
