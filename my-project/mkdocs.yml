@@ -51,6 +51,7 @@ extra_css:
 nav:
   - Home: index.md
   - Absolute protein quantification: abs_quant.md
+  - Tutorial: Tutorial.md
   - Getting started: getting_started.md
   - Data pre-processing: data_preprocessing.md
   - Quantification: quantification.md
