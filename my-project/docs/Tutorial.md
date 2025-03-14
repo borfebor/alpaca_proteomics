@@ -241,62 +241,6 @@ sample_prep.sample()
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Condition</th>
-      <th>SampleVolume</th>
-      <th>ProteinConcentration</th>
-      <th>AmountMS</th>
-      <th>CellsPerML</th>
-      <th>TotalCultureVolume</th>
-      <th>ProteinSRM</th>
-      <th>fmolSRM</th>
-      <th>Enrichment</th>
-      <th>EnrichmentMode</th>
-      <th>StdDilution</th>
-      <th>StdVolume</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>Control</td>
-      <td>9.310715</td>
-      <td>7.766196</td>
-      <td>1.060855</td>
-      <td>1.658673</td>
-      <td>9.223972</td>
-      <td>P54576</td>
-      <td>6.914357</td>
-      <td>True</td>
-      <td>Sampling</td>
-      <td>9.943855</td>
-      <td>9.530689</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 Experimental details (in our example `params.txt`) can be added as txt, csv or xlsx formats. This file can include the columns described in the following table:
 
 **Table 2.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentMode, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
@@ -304,8 +248,8 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 | Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentMode | StdDilution | StdVolume |
 |-------------|--------------|----------------------|----------|------------|--------------------|------------|---------|------------|---------------------|-------------|-----------|
 | Cond1_t0    | 2.31         | 2.99                 | 9.67     | 4.54       | 7.54               | TNAMLN     | 4.44    | False      |                 | 3.96        | 1.22      |
-| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Sampling                | 2.43        | 1.51      |
-| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Amplification                | 5.71        | 8.53      |
+| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Concentration                | 2.43        | 1.51      |
+| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Enrichment                | 5.71        | 8.53      |
 
 ## Proteome fraction enrichment (Optional)
 
