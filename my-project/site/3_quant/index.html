@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../quant/">
+        <link rel="prev" href="../2_first/">
       
       
-        <link rel="next" href="../integration/">
+        <link rel="next" href="../4_enrich/">
       
       
       <link rel="icon" href="../assets/logo.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Enrichment - documentation</title>
+        <title>Quantification - documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alpacagathersdf-enrichment_standards-preparation-lfq_methodibaq-plotfalse-save_plotfalse" class="md-skip">
+        <a href="#quantification" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enrichment
+              Quantification
             
           </span>
         </div>
@@ -174,7 +174,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../0_index/" class="md-tabs__link">
         
   
     
@@ -191,7 +191,24 @@
   
   
     <li class="md-tabs__item">
-      <a href="../getting_started/" class="md-tabs__link">
+      <a href="../01_abs_quant/" class="md-tabs__link">
+        
+  
+    
+  
+  Absolute protein quantification
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1_getting_started/" class="md-tabs__link">
         
   
     
@@ -208,29 +225,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../first/" class="md-tabs__link">
+      <a href="../2_first/" class="md-tabs__link">
         
   
     
   
   Data pre-processing
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../quant/" class="md-tabs__link">
-        
-  
-    
-  
-  Quantification
 
       </a>
     </li>
@@ -249,6 +249,23 @@
   
     
   
+  Quantification
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../4_enrich/" class="md-tabs__link">
+        
+  
+    
+  
   Enrichment
 
       </a>
@@ -261,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../integration/" class="md-tabs__link">
+      <a href="../5_integration/" class="md-tabs__link">
         
   
     
@@ -312,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../0_index/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,7 +350,28 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
+      <a href="../01_abs_quant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Absolute protein quantification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_getting_started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -354,32 +392,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../first/" class="md-nav__link">
+      <a href="../2_first/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Data pre-processing
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quant/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Quantification
     
   </span>
   
@@ -402,12 +419,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Enrichment
+    Quantification
     
   </span>
   
@@ -419,7 +438,7 @@
         
   
   <span class="md-ellipsis">
-    Enrichment
+    Quantification
     
   </span>
   
@@ -432,6 +451,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -440,11 +461,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpacagathersdf-enrichment_standards-preparation-lfq_methodibaq-plotfalse-save_plotfalse" class="md-nav__link">
+  <a href="#function-alpacacensus" class="md-nav__link">
     <span class="md-ellipsis">
-      alpaca.gathers(df, enrichment_standards, preparation, lfq_method='iBAQ', plot=False, save_plot=False)
+      🧮 Function: alpaca.census()
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧮 Function: alpaca.census()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacacensusdf-standards-concentration05-in_sample60-lfq_colibaq-ratio1-total_protein1-filter_colreplicate-added_samplesnone-valid_values0-plottrue-savefalse" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.census(df, standards, concentration=0.5, in_sample=6.0, lfq_col='iBAQ', ratio=1, total_protein=1, filter_col='Replicate', added_samples=None, valid_values=0, plot=True, save=False)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Signature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -463,7 +508,28 @@
   
   
     <li class="md-nav__item">
-      <a href="../integration/" class="md-nav__link">
+      <a href="../4_enrich/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enrichment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_integration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -494,6 +560,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -502,11 +570,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpacagathersdf-enrichment_standards-preparation-lfq_methodibaq-plotfalse-save_plotfalse" class="md-nav__link">
+  <a href="#function-alpacacensus" class="md-nav__link">
     <span class="md-ellipsis">
-      alpaca.gathers(df, enrichment_standards, preparation, lfq_method='iBAQ', plot=False, save_plot=False)
+      🧮 Function: alpaca.census()
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧮 Function: alpaca.census()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacacensusdf-standards-concentration05-in_sample60-lfq_colibaq-ratio1-total_protein1-filter_colreplicate-added_samplesnone-valid_values0-plottrue-savefalse" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.census(df, standards, concentration=0.5, in_sample=6.0, lfq_col='iBAQ', ratio=1, total_protein=1, filter_col='Replicate', added_samples=None, valid_values=0, plot=True, save=False)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Signature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -526,54 +618,98 @@
 
 
 
-  <h1>Enrichment</h1>
-
-<h3 id="alpacagathersdf-enrichment_standards-preparation-lfq_methodibaq-plotfalse-save_plotfalse"><code>alpaca.gathers(df, enrichment_standards, preparation, lfq_method='iBAQ', plot=False, save_plot=False)</code></h3>
-<p>Calculates enrichment factors for protein standards spiked into samples and optionally plots the results.</p>
+<h1 id="quantification">🔢 Quantification</h1>
+<p>The quantification module of the <strong>ALPACA (Absolute Protein Quantification)</strong> proteomics pipeline is designed to facilitate the analysis of absolute protein quantification data. This Python-based tool streamlines the processing of mass spectrometry data, enabling researchers to accurately determine protein abundances in complex biological samples. By integrating with various proteomics data formats and employing robust statistical methods, the module ensures precise quantification, thereby enhancing the reliability of downstream analyses.</p>
+<p>This module is especially valuable for researchers working with large-scale proteomics datasets, as it simplifies the steps necessary to generate quantitative data that can be used for a wide range of biological insights.</p>
+<hr />
+<h2 id="function-alpacacensus">🧮 <strong>Function: <code>alpaca.census()</code></strong></h2>
+<p>The primary function in the quantification module, <code>alpaca.census()</code>, is responsible for performing the absolute quantification of protein abundances using various statistical methods.</p>
+<hr />
+<h3 id="alpacacensusdf-standards-concentration05-in_sample60-lfq_colibaq-ratio1-total_protein1-filter_colreplicate-added_samplesnone-valid_values0-plottrue-savefalse"><code>alpaca.census(df, standards, concentration=0.5, in_sample=6.0, lfq_col='iBAQ', ratio=1, total_protein=1, filter_col='Replicate', added_samples=None, valid_values=0, plot=True, save=False)</code></h3>
+<p>Performs protein quantification using regression between quantified protein intensities and dynamic standards (e.g., UPS2).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
 <p><strong><code>df</code></strong> (<code>pandas.DataFrame</code>):<br />
-  DataFrame containing the quantified protein data (e.g., with iBAQ or LFQ values).</p>
+  DataFrame containing clean data for quantified proteins.</p>
 </li>
 <li>
-<p><strong><code>enrichment_standards</code></strong> (<code>pandas.DataFrame</code> or file-like object):<br />
-  DataFrame or file containing the standard information for calculating enrichment.</p>
+<p><strong><code>standards</code></strong> (<code>str</code> or file-like object):<br />
+  Path to a file containing UPS2 dynamic standards information or the standards file itself (e.g., .csv, .txt, .xlsx).</p>
 </li>
 <li>
-<p><strong><code>preparation</code></strong> (<code>pandas.DataFrame</code>):<br />
-  DataFrame containing information about the experimental preparation (e.g., conditions).</p>
+<p><strong><code>concentration</code></strong> (<code>float</code>, optional, default=<code>0.5</code>):<br />
+  Stock concentration of the standards in mg/mL.</p>
 </li>
 <li>
-<p><strong><code>lfq_method</code></strong> (<code>str</code>, optional, default=<code>'iBAQ'</code>):<br />
-  Label-free quantification method used in the analysis (e.g., 'iBAQ', 'LFQ').</p>
+<p><strong><code>in_sample</code></strong> (<code>float</code>, optional, default=<code>6.0</code>):<br />
+  Volume (in microliters) of standards added to each sample.</p>
 </li>
 <li>
-<p><strong><code>plot</code></strong> (<code>bool</code>, optional, default=<code>False</code>):<br />
-  Whether to plot the enrichment factors.</p>
+<p><strong><code>lfq_col</code></strong> (<code>str</code>, optional, default=<code>'iBAQ'</code>):<br />
+  Column name in <code>df</code> representing the intensity values.</p>
 </li>
 <li>
-<p><strong><code>save_plot</code></strong> (<code>bool</code>, optional, default=<code>False</code>):<br />
-  Whether to save the plot as a file.</p>
+<p><strong><code>ratio</code></strong> (<code>float</code>, optional, default=<code>1</code>):<br />
+  A multiplier for adjusting the calculated concentration of standard proteins to the sample amount.</p>
+</li>
+<li>
+<p><strong><code>total_protein</code></strong> (<code>float</code>, optional, default=<code>1</code>):<br />
+  Total protein concentration in the sample.</p>
+</li>
+<li>
+<p><strong><code>filter_col</code></strong> (<code>str</code>, optional, default=<code>'Replicate'</code>):<br />
+  Column name used to filter data for specific replicates or conditions.</p>
+</li>
+<li>
+<p><strong><code>added_samples</code></strong> (<code>list</code>, optional, default=<code>None</code>):<br />
+  List of samples or conditions where standards were added. If <code>None</code>, assumes standards were added to all samples.</p>
+</li>
+<li>
+<p><strong><code>valid_values</code></strong> (<code>int</code>, optional, default=<code>2</code>):<br />
+  Minimum number of valid (non-missing) values required for regression.</p>
+</li>
+<li>
+<p><strong><code>plot</code></strong> (<code>bool</code>, optional, default=<code>True</code>):<br />
+  Whether to generate and display regression plots.</p>
+</li>
+<li>
+<p><strong><code>save</code></strong> (<code>bool</code>, optional, default=<code>False</code>):<br />
+  Whether to save the regression plots.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
 <li>
-<p><strong><code>e_test</code></strong> (<code>pandas.DataFrame</code>):<br />
-  DataFrame containing calculated enrichment values for each sample.</p>
+<p><strong><code>df</code></strong> (<code>pandas.DataFrame</code>):<br />
+  DataFrame with quantified proteins, adjusted for concentration.</p>
 </li>
 <li>
-<p><strong><code>preparation</code></strong> (<code>pandas.DataFrame</code>):<br />
-  Updated preparation DataFrame with enrichment factors added.</p>
+<p><strong><code>ups_red</code></strong> (<code>pandas.DataFrame</code>):<br />
+  DataFrame containing measured standards in the sample.</p>
+</li>
+<li>
+<p><strong><code>coef</code></strong> (<code>float</code>):<br />
+  Regression slope used for quantification.</p>
+</li>
+<li>
+<p><strong><code>inter</code></strong> (<code>float</code>):<br />
+  Regression intercept used for quantification.</p>
+</li>
+<li>
+<p><strong><code>R2</code></strong> (<code>float</code>):<br />
+  R-squared value representing the goodness-of-fit for the regression.</p>
 </li>
 </ul>
 <p><strong>Notes:</strong></p>
 <ul>
-<li>The function calculates the enrichment factors by comparing the protein levels in the experimental samples to the spiked-in standards.</li>
-<li>It groups the data by experimental conditions and replicates to calculate median enrichment values.</li>
-<li>The function also optionally generates and saves a plot of the enrichment values.</li>
+<li>The function performs regression analysis between protein intensities in <code>df</code> and spiked-in dynamic standards (e.g., UPS2) to quantify proteins.</li>
+<li>It provides an option to visualize and save regression plots.</li>
+<li>A low R² value (less than 0.8) indicates a poor fit for the regression and should be carefully reviewed.</li>
 </ul>
+<h3 id="signature">🧾 <strong>Signature</strong></h3>
+<p><code>`python
+alpaca.census(data, method="sum", target_protein="total_protein", normalize=False)</code></p>
 
 
 
