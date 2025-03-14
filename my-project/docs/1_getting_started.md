@@ -38,3 +38,14 @@ You can check your Python version with:
 	pip install -e .
 
 	python -c "import alpaca_proteomics; print(alpaca_proteomics.__version__)"
+
+The following packages are required for the correct execution of alpaca_proteomics:
+
+- matplotlib
+- numpy
+- pandas
+- scikit-learn
+- scipy
+- seaborn
+- thefuzz
+- XlsxWriter

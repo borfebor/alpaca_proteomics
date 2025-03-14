@@ -65,7 +65,7 @@ file = "results.csv"
 data = alpaca.eats(file)
 ```
 
-## 📥 **2. Quantification assistance with`alpaca.Consultant()`**
+## 🤖 **2. Quantification assistance with`alpaca.Consultant()`**
 
 ### `alpaca.Consultant(df, st_proteins, it, added_samples='all', norm_options=['None', 'Relative', 'Median', 'Quantile'], values_per_sample=0.3)`
 
@@ -103,7 +103,7 @@ Suggests the best normalization and intensity method for protein quantification 
 
 
 
-## 📥 **3. Data pre-processing with `alpaca.spits()`**
+## 🧹 **3. Data pre-processing with `alpaca.spits()`**
 
 ### `alpaca.spits(data, lfq_method, id_col='auto', replicate_dict='auto', intensity_dict='auto', info_cols=None, contamination_cols=['identified by site', 'contaminant', 'Reverse'], cleaning=True, formatting='auto', transformation=np.log2, normalization=None, valid_values=0.7, imputation='', **imp_kwargs)`
 

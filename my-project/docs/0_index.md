@@ -2,6 +2,8 @@
 
 # 📊 **alpaca_proteomics**: A Python-based Proteomics Pipeline
 
+![Alt Text](assets/Fig_1_alpaca.png)
+
 **`alpaca_proteomics`** is a Python-based pipeline designed for **Absolute Protein Quantification** in proteomics research. It streamlines the analysis of mass spectrometry data, enabling accurate determination of protein abundances in complex biological samples. By supporting various proteomics data formats and employing robust statistical methods, it enhances the reliability of quantitative analyses.
 
 ## 🧑‍🔬 **Key Features**

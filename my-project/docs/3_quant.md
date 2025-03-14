@@ -31,10 +31,10 @@ Performs protein quantification using regression between quantified protein inte
   Volume (in microliters) of standards added to each sample.
 
 - **`lfq_col`** (`str`, optional, default=`'iBAQ'`):  
-  Column name in `df` representing the label-free quantification (LFQ) values.
+  Column name in `df` representing the intensity values.
 
 - **`ratio`** (`float`, optional, default=`1`):  
-  A multiplier for adjusting the calculated concentration of each protein.
+  A multiplier for adjusting the calculated concentration of standard proteins to the sample amount.
 
 - **`total_protein`** (`float`, optional, default=`1`):  
   Total protein concentration in the sample.
