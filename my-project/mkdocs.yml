@@ -49,10 +49,10 @@ extra_css:
   - assets/styles.css
 
 nav:
-  - Home: 0_index.md
-  - Absolute protein quantification: 01_abs_quant.md
-  - Getting started: 1_getting_started.md
-  - Data pre-processing: 2_first.md
-  - Quantification: 3_quant.md
-  - Enrichment: 4_enrich.md
-  - Data integration: 5_integration.md
+  - Home: index.md
+  - Absolute protein quantification: abs_quant.md
+  - Getting started: getting_started.md
+  - Data pre-processing: data_preprocessing.md
+  - Quantification: quantification.md
+  - Enrichment: enrichment.md
+  - Data integration: integration.md
