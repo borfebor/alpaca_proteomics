@@ -1,0 +1,907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../getting_started/">
+      
+      
+        <link rel="next" href="../quant/">
+      
+      
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Data pre-processing - documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-pre-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="documentation" class="md-header__button md-logo" aria-label="documentation" data-md-component="logo">
+      
+  <img src="../assets/ALPACA_LOGO2.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data pre-processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting_started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Data pre-processing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quant/" class="md-tabs__link">
+        
+  
+    
+  
+  Quantification
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../enrich/" class="md-tabs__link">
+        
+  
+    
+  
+  Enrichment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration/" class="md-tabs__link">
+        
+  
+    
+  
+  Data integration
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="documentation" class="md-nav__button md-logo" aria-label="documentation" data-md-component="logo">
+      
+  <img src="../assets/ALPACA_LOGO2.png" alt="logo">
+
+    </a>
+    documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data pre-processing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data pre-processing
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Overview of the Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-importing-data-with-alpacaeats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 1. Importing Data with alpaca.eats()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 1. Importing Data with alpaca.eats()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaeatsfile-inspecttrue" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.eats(file, inspect=True)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-quantification-assistance-withalpacaconsultant" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 2. Quantification assistance withalpaca.Consultant()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 2. Quantification assistance withalpaca.Consultant()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaconsultantdf-st_proteins-it-added_samplesall-norm_optionsnone-relative-median-quantile-values_per_sample03" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.Consultant(df, st_proteins, it, added_samples='all', norm_options=['None', 'Relative', 'Median', 'Quantile'], values_per_sample=0.3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-pre-processing-with-alpacaspits" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 3. Data pre-processing with alpaca.spits()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 3. Data pre-processing with alpaca.spits()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaspitsdata-lfq_method-id_colauto-replicate_dictauto-intensity_dictauto-info_colsnone-contamination_colsidentified-by-site-contaminant-reverse-cleaningtrue-formattingauto-transformationnplog2-normalizationnone-valid_values07-imputation-imp_kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.spits(data, lfq_method, id_col='auto', replicate_dict='auto', intensity_dict='auto', info_cols=None, contamination_cols=['identified by site', 'contaminant', 'Reverse'], cleaning=True, formatting='auto', transformation=np.log2, normalization=None, valid_values=0.7, imputation='', **imp_kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enrich/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enrichment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Overview of the Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-importing-data-with-alpacaeats" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 1. Importing Data with alpaca.eats()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 1. Importing Data with alpaca.eats()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaeatsfile-inspecttrue" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.eats(file, inspect=True)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-quantification-assistance-withalpacaconsultant" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 2. Quantification assistance withalpaca.Consultant()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 2. Quantification assistance withalpaca.Consultant()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaconsultantdf-st_proteins-it-added_samplesall-norm_optionsnone-relative-median-quantile-values_per_sample03" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.Consultant(df, st_proteins, it, added_samples='all', norm_options=['None', 'Relative', 'Median', 'Quantile'], values_per_sample=0.3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-pre-processing-with-alpacaspits" class="md-nav__link">
+    <span class="md-ellipsis">
+      📥 3. Data pre-processing with alpaca.spits()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📥 3. Data pre-processing with alpaca.spits()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpacaspitsdata-lfq_method-id_colauto-replicate_dictauto-intensity_dictauto-info_colsnone-contamination_colsidentified-by-site-contaminant-reverse-cleaningtrue-formattingauto-transformationnplog2-normalizationnone-valid_values07-imputation-imp_kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      alpaca.spits(data, lfq_method, id_col='auto', replicate_dict='auto', intensity_dict='auto', info_cols=None, contamination_cols=['identified by site', 'contaminant', 'Reverse'], cleaning=True, formatting='auto', transformation=np.log2, normalization=None, valid_values=0.7, imputation='', **imp_kwargs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="data-pre-processing">🧼 Data Pre-processing</h1>
+<p>Data import and pre-processing are foundational steps in proteomics analysis, ensuring that raw experimental data is transformed into a clean, standardized format for downstream analysis. In the context of <code>alpaca_proteomics</code>, these steps are critical and applicable for both relative and absolute quantification in quantitative proteomics.  </p>
+<p>Proper pre-processing removes contaminants, handles missing values, and normalizes datasets, minimizing technical variability and enhancing the accuracy of protein quantification. This ensures robust and reproducible results, enabling meaningful biological insights. The library streamlines these tasks, making it highly applicable for workflows involving large-scale proteomics data.</p>
+<hr />
+<h2 id="overview-of-the-workflow">🔁 <strong>Overview of the Workflow</strong></h2>
+<p>The pre-processing pipeline in <code>alpaca</code> consists of three main steps:</p>
+<ol>
+<li><strong>Import</strong> raw data using <code>alpaca.eats()</code>  </li>
+<li><strong>Consult (Optional)</strong> an automated advisor via <code>alpaca.Consultant()</code> to choose optimal parameters</li>
+<li><strong>Clean</strong> the dataset with <code>alpaca.spits()</code>  </li>
+</ol>
+<hr />
+<h2 id="1-importing-data-with-alpacaeats">📥 <strong>1. Importing Data with <code>alpaca.eats()</code></strong></h2>
+<p>📚 <strong>Function Overview</strong></p>
+<p><code>alpaca.eats()</code> ingests proteomics data files in various formats and returns a structured <code>pandas.DataFrame</code>.</p>
+<h3 id="alpacaeatsfile-inspecttrue"><code>alpaca.eats(file, inspect=True)</code></h3>
+<p>Loads proteomics data from a file in <code>.txt</code>, <code>.tsv</code>, <code>.csv</code>, or <code>.xlsx</code> format.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><strong><code>file</code></strong> (<code>str</code> or file-like):<br />
+  Path to the data file or an open file object. Supported formats include:</p>
+<ul>
+<li><code>.txt</code> or <code>.tsv</code>: Tab-separated values  </li>
+<li><code>.csv</code>: Comma-separated values  </li>
+<li><code>.xlsx</code>: Excel spreadsheet</li>
+</ul>
+</li>
+<li>
+<p><strong><code>inspect</code></strong> (<code>bool</code>, default=<code>True</code>):<br />
+  If <code>True</code>, the function tries to identify the column containing protein group IDs and the available intensity methods using <code>detective.alpacaHolmes</code>.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>
+<p>If <code>inspect=True</code> and detection is successful:<br />
+  Returns a tuple <code>(DataFrame, id_col, intensity_dict)</code></p>
+</li>
+<li>
+<p>If <code>inspect=True</code> but detection fails:<br />
+  Returns the <code>DataFrame</code> with a warning message.</p>
+</li>
+<li>
+<p>If <code>inspect=False</code>:<br />
+  Returns the <code>DataFrame</code> only.</p>
+</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>If the file format is not recognized, the function prints a</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">alpaca_proteomics</span><span class="w"> </span><span class="kn">import</span> <span class="n">alpaca</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;results.csv&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">data</span> <span class="o">=</span> <span class="n">alpaca</span><span class="o">.</span><span class="n">eats</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="2-quantification-assistance-withalpacaconsultant">📥 <strong>2. Quantification assistance with<code>alpaca.Consultant()</code></strong></h2>
+<h3 id="alpacaconsultantdf-st_proteins-it-added_samplesall-norm_optionsnone-relative-median-quantile-values_per_sample03"><code>alpaca.Consultant(df, st_proteins, it, added_samples='all', norm_options=['None', 'Relative', 'Median', 'Quantile'], values_per_sample=0.3)</code></h3>
+<p>Suggests the best normalization and intensity method for protein quantification based on regression performance with spiked-in standards.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><strong><code>df</code></strong> (<code>pandas.DataFrame</code>):<br />
+  DataFrame containing the quantified protein data to be analyzed.</p>
+</li>
+<li>
+<p><strong><code>st_proteins</code></strong> (<code>pandas.DataFrame</code>):<br />
+  DataFrame containing the spiked-in standards used for regression-based quantification.</p>
+</li>
+<li>
+<p><strong><code>it</code></strong> (<code>dict</code>):<br />
+  Dictionary where keys are intensity methods (e.g., 'LFQ') and values are lists of corresponding sample names.</p>
+</li>
+<li>
+<p><strong><code>added_samples</code></strong> (<code>list</code> or <code>'all'</code>, default=<code>'all'</code>):<br />
+  List of sample names to apply the analysis to. If <code>'all'</code>, applies to all samples.</p>
+</li>
+<li>
+<p><strong><code>norm_options</code></strong> (<code>list</code>, default=<code>['None', 'Relative', 'Median', 'Quantile']</code>):<br />
+  List of normalization options to test during analysis.</p>
+</li>
+<li>
+<p><strong><code>values_per_sample</code></strong> (<code>float</code>, default=<code>0.3</code>):<br />
+  Minimum proportion of valid values (non-missing) required per sample for analysis.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>pandas.DataFrame</code>:<br />
+  DataFrame with tested normalization and intensity methods, and their corresponding R² scores.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The function runs regression analysis for each combination of normalization and intensity method, evaluating the quality of fit using R².</li>
+<li>Based on the highest R² score, the function recommends the best combination of intensity method and normalization for protein quantification.</li>
+</ul>
+<h2 id="3-data-pre-processing-with-alpacaspits">📥 <strong>3. Data pre-processing with <code>alpaca.spits()</code></strong></h2>
+<h3 id="alpacaspitsdata-lfq_method-id_colauto-replicate_dictauto-intensity_dictauto-info_colsnone-contamination_colsidentified-by-site-contaminant-reverse-cleaningtrue-formattingauto-transformationnplog2-normalizationnone-valid_values07-imputation-imp_kwargs"><code>alpaca.spits(data, lfq_method, id_col='auto', replicate_dict='auto', intensity_dict='auto', info_cols=None, contamination_cols=['identified by site', 'contaminant', 'Reverse'], cleaning=True, formatting='auto', transformation=np.log2, normalization=None, valid_values=0.7, imputation='', **imp_kwargs)</code></h3>
+<p>Processes a proteomics DataFrame for quantitative analysis, performing tasks such as cleaning, transformation, imputation, normalization, and formatting for downstream analysis or visualization.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><strong><code>data</code></strong> (<code>pandas.DataFrame</code>):<br />
+  Input DataFrame containing the raw intensity data.</p>
+</li>
+<li>
+<p><strong><code>lfq_method</code></strong> (<code>str</code>):<br />
+  Column name or label-free quantification (LFQ) method used to extract intensities.</p>
+</li>
+<li>
+<p><strong><code>id_col</code></strong> (<code>str</code>, default=<code>'auto'</code>):<br />
+  Column name containing unique protein identifiers. If <code>'auto'</code>, it is inferred using <code>detective.alpacaHolmes</code>.</p>
+</li>
+<li>
+<p><strong><code>replicate_dict</code></strong> (<code>dict</code> or <code>'auto'</code>, default=<code>'auto'</code>):<br />
+  Dictionary mapping sample names to <code>Condition;Replicate</code> values. If <code>'auto'</code>, it is inferred using <code>detective.alpacaWatson</code>.</p>
+</li>
+<li>
+<p><strong><code>intensity_dict</code></strong> (<code>dict</code> or <code>'auto'</code>, default=<code>'auto'</code>):<br />
+  Dictionary mapping LFQ methods to their corresponding columns. Inferred automatically if set to <code>'auto'</code>.</p>
+</li>
+<li>
+<p><strong><code>info_cols</code></strong> (<code>list</code>, optional):<br />
+  Columns containing additional metadata to retain. If <code>None</code>, selected based on common patterns.</p>
+</li>
+<li>
+<p><strong><code>contamination_cols</code></strong> (<code>list</code>, default=<code>['identified by site', 'contaminant', 'Reverse']</code>):<br />
+  Columns used to identify and remove contaminants or reverse hits.</p>
+</li>
+<li>
+<p><strong><code>cleaning</code></strong> (<code>bool</code>, default=<code>True</code>):<br />
+  Whether to filter out contaminants and reverse hits.</p>
+</li>
+<li>
+<p><strong><code>formatting</code></strong> (<code>str</code> or <code>bool</code>, default=<code>'auto'</code>):<br />
+  Controls output format. If <code>True</code>, returns long-format data suitable for downstream processing.<br />
+  If <code>'auto'</code>, formatting is inferred.</p>
+</li>
+<li>
+<p><strong><code>transformation</code></strong> (<code>callable</code>, default=<code>np.log2</code>):<br />
+  Function used to transform intensity values (e.g., log transformation).</p>
+</li>
+<li>
+<p><strong><code>normalization</code></strong> (<code>str</code>, default=<code>None</code>):<br />
+  Normalization method. Accepted values: <code>'None'</code>, <code>'Relative'</code>, <code>'Median'</code>, <code>'Quantile'</code>.</p>
+</li>
+<li>
+<p><strong><code>valid_values</code></strong> (<code>float</code>, default=<code>0.7</code>):<br />
+  Minimum proportion of valid values (non-missing) required to retain a row per condition.</p>
+</li>
+<li>
+<p><strong><code>imputation</code></strong> (<code>str</code>, default=<code>''</code>):<br />
+  Imputation method for missing values. Available options:
+  <code>'None'</code>, <code>'LOD'</code>, <code>'ND'</code>, <code>'kNN'</code>, <code>'LLS'</code>, <code>'SVD'</code>.<br />
+  If empty, no imputation is applied.</p>
+</li>
+<li>
+<p><strong><code>**imp_kwargs</code></strong> (<code>dict</code>):<br />
+  Additional keyword arguments passed to the imputation function, if specified.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>pandas.DataFrame</code>:<br />
+  A processed DataFrame, either in long format (for analysis and plotting) or wide format (for inspection), depending on the <code>formatting</code> parameter.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Requires an intensity column and a way to define biological replicates.</li>
+<li>If any key components (<code>id_col</code>, <code>replicate_dict</code>, or <code>intensity_dict</code>) are set to <code>'auto'</code>, the function attempts to detect them automatically.</li>
+<li>Designed to integrate with the <code>alpaca</code> pipeline and its internal modules like <code>detective</code>, <code>tools</code>, <code>Imputation</code>, and <code>Normalization</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
