@@ -58,8 +58,8 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 | Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentDirection | StdDilution | StdVolume |
 |-------------|--------------|----------------------|----------|------------|--------------------|------------|---------|------------|---------------------|-------------|-----------|
 | Cond1_t0    | 2.31         | 2.99                 | 9.67     | 4.54       | 7.54               | TNAMLN     | 4.44    | False      |                 | 3.96        | 1.22      |
-| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Amplification                | 2.43        | 1.51      |
-| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Sampling                | 5.71        | 8.53      |
+| Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Enrichment                | 2.43        | 1.51      |
+| Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Concentration                | 5.71        | 8.53      |
 
 - **Condition**: Condition in which 
 - **SampleVolume**: Protein extract volume (µL) used for protein digestion.
@@ -70,7 +70,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 - **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
 - **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
 - **Enrichment** `Optional`: Boolean (True or False). Samples that have been enriched should be specified as True
-- **EnrichmentDirection** `Optional`: Amplification or Sampling (see Supplementary Material).
+- **EnrichmentDirection** `Optional`: Enrichment or Concentration (see Supplementary Material).
 - **StdDilution** (Optional): This parameter specifies how many times the stock solution of enrichment standards has been diluted before adding it to the sample. If the standards were not diluted before addition, specify 1. Only used when the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added. 
 - **StdVolume** (Optional): Volume of enrichment standards (µL) added to the sample. Only used in case the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added.
 
