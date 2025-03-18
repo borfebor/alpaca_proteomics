@@ -1,6 +1,6 @@
 ![Alt Text](assets/ALPACA_LOGO2.png)
 
-# 📊 **alpaca_proteomics**: A Python-based Proteomics Pipeline
+# 📊 **alpaca_proteomics**: A Python-based Proteomics Pipeline for absolute protein quantification
 
 ![Alt Text](assets/Fig_1_alpaca.png)
 

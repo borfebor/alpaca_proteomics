@@ -1,20 +1,3 @@
-### Getting Started
-
-1. Install alpaca package on the terminal through 
-
-
-```
-pip install alpaca-proteomics
-```
-
-
-2. Import the package
-
-
-
-```python
-from alpaca_proteomics import alpaca
-```
 
 ## Data import and formatting
 
@@ -22,6 +5,8 @@ Alpaca works with unprocessed proteomics datasets from MaxQuant. The package tak
 
 
 ```python
+from alpaca_proteomics import alpaca
+
 file = 'proteinGroups.txt'
 
 # Data importation
@@ -59,7 +44,7 @@ suggested = alpaca.Consultant(df,
     Based on your data, Median-normalized iBAQ is recommended for the quantification.
 
 
-The function returns an suggested analysis method and a dataframe with the calculated scores for each intensity method with different normalization approaches. These data is visualized below.
+The function returns a suggested analysis method and a dataframe with the calculated scores for each intensity method with different normalization approaches. These data is visualized below.
 
 
 ```python
@@ -88,7 +73,7 @@ sns.heatmap(suggested.pivot(index='Normalization', columns='Intensity method', v
 
 ### Data pre-processing
 
-Based on the suggestions from the function alpaca.Consultant, the analysis can continue with the most suitable parameters.
+Based on the suggestions from the function alpaca.Consultant, the analysis can continue with the most suitable parameters
 
 
 ```python
@@ -193,7 +178,7 @@ clean_df.head(5)
 
 ## Anchor protein quantification
 
-Absolute quantification using Alpaca is optimised for label-free methods, relying on the addition of a set of anchor proteins at a know amount. 
+Absolute quantification using Alpaca is optimised for label-free methods, relying on the addition of a set of anchor proteins at a known amount. 
 
 **Table 1.** Format for the file describing the stock solution of anchor proteins.
 
@@ -240,7 +225,6 @@ sample_prep = pd.read_csv('params.csv', sep=',')
 sample_prep.sample()
 ```
 
-
 Experimental details (in our example `params.txt`) can be added as txt, csv or xlsx formats. This file can include the columns described in the following table:
 
 **Table 2.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentMode, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
@@ -253,7 +237,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 
 ## Proteome fraction enrichment (Optional)
 
-In case the study focuses in a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation and enrichment step was performed. This module allows to translate the enrichment step to the data based on how the samples were prepared. 
+In case the study focuses in a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation an enrichment step was performed. This module allows to translate the enrichment step to the data based on how the samples were prepared. 
 
 `Enrichment factors` are calculated based on the fmol quantified in the enriched sample to the raw or non-enriched sample:
 
@@ -261,15 +245,15 @@ $$
 ER = \frac{fmol_{enriched}}{fmol_{non-enriched}}
 $$
 
-For that purpose, there are 2 strategies that are currently covered under our pipeline:
+For that purpose, there are 2 strategies that are currently covered under in Alpaca:
 
-**1. The quantification of specific proteins of the analysed fraction on both before and after the enrichment step using Targeted MS (SRM).** 
+**1. The quantification of specific proteins of the analysed fraction before and after the enrichment step using Targeted MS (SRM).** 
 
 This strategy was described on [Antelo-Varela et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31424929/) and relies on using external protocols (e.g., Skyline) to quantify the enrichment step. Enrichment factors can be added to the parameters table under the column `Enrichment_Factor`. Additionally, the SRM quantified amount for a given protein can be added on the columns `ProteinSRM` (Accession of the quantified protein) and `fmolSRM` (Quantified fmol in the analysed proteome fraction).
 
 **2. The addition of whole proteins at known concentration before performing the enrichment step.**
 
-This approach was described on [Ferrero-Bordera et al. 2024](https://doi.org/10.1128/spectrum.02616-23) and requires of a protein mixture at known concentration added before the enrichment step. Used standards have to be formatted as specified in the table below:
+This approach was described on [Ferrero-Bordera et al. 2024](https://doi.org/10.1128/spectrum.02616-23) and requires a protein mixture at known concentration added before the enrichment step. Used standards have to be formatted as specified in the table below:
 
 **Table 3.** Enrichment standards
 
@@ -289,8 +273,6 @@ This approach was described on [Ferrero-Bordera et al. 2024](https://doi.org/10.
 enrichment_std = pd.read_excel('enrichment_std.xlsx')
 enrichment_std.sample(3)
 ```
-
-
 
 
 <div>
@@ -321,7 +303,7 @@ enrichment_std.sample(3)
   <tbody>
     <tr>
       <th>4</th>
-      <td>Lisozyme</td>
+      <td>Lysozyme</td>
       <td>P00698</td>
       <td>129 aa</td>
       <td>14.3</td>
@@ -329,7 +311,7 @@ enrichment_std.sample(3)
     </tr>
     <tr>
       <th>2</th>
-      <td>ADH</td>
+      <td>Alcohol Dehydrogenase</td>
       <td>P00330</td>
       <td>348 aa</td>
       <td>36.8</td>
@@ -360,7 +342,7 @@ enrichment_std, sample_prep_updated = alpaca.gathers(clean_df, enrichment_std, s
 
 ## Data integration
 
-This module connects the protein amounts quantified in the sample and the sample preparation. Thus, allowing to calculate protein amounts to the original state (e.g. bacterial culture, raw culture supernatant). This step brings deeper insights to the user based on the known experimental parameters, yielding high valuable data (e.g., molecules per cell, fmol / µmol of protein extract)
+This module connects the protein amounts quantified in the sample and the sample preparation. Thus, allowing to calculate protein amounts to the original state (e.g. bacterial culture, raw culture supernatant). This step yields absolute quantification data (e.g., molecules per cell, fmol / µmol of protein extract)
 
 
 ```python

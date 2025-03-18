@@ -1,6 +1,6 @@
 # 🧼 Data Pre-processing
 
-Data import and pre-processing are foundational steps in proteomics analysis, ensuring that raw experimental data is transformed into a clean, standardized format for downstream analysis. In the context of `alpaca_proteomics`, these steps are critical and applicable for both relative and absolute quantification in quantitative proteomics.  
+Data import and pre-processing are fundamental steps in proteomics analysis with Alpaca, ensuring that raw experimental data is transformed into a clean, standardized format for downstream analysis. In the context of `alpaca_proteomics`, these steps are critical and applicable for both relative and absolute quantification in quantitative proteomics.  
 
 Proper pre-processing removes contaminants, handles missing values, and normalizes datasets, minimizing technical variability and enhancing the accuracy of protein quantification. This ensures robust and reproducible results, enabling meaningful biological insights. The library streamlines these tasks, making it highly applicable for workflows involving large-scale proteomics data.
 
@@ -51,7 +51,7 @@ Loads proteomics data from a file in `.txt`, `.tsv`, `.csv`, or `.xlsx` format.
 
 **Notes:**
 
-- If the file format is not recognized, the function prints a
+- If the file format is not recognized, the function prints a message and returns `None`.
 
  
 

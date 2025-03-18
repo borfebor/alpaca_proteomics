@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Absolute proteome quantification refers to the precise determination of the absolute concentrations of proteins within a biological sample. This approach contrasts with relative quantification methods, which measure changes in protein abundance between different conditions without providing exact concentration values. Absolute quantification is achieved through techniques such as mass spectrometry, often involving the use of stable isotope-labeled standards.
+Absolute proteome quantification refers to the precise determination of the absolute concentrations of proteins within a biological sample. This approach contrasts with relative quantification methods, which measure changes in protein abundance between different conditions without providing exact concentration values. Absolute quantification is achieved through techniques such as mass spectrometry, often involving the use of standards of known concentration.
 
 ## Relevance of Absolute Quantification
 
-Understanding the absolute amounts of proteins is crucial for several reasons:
+Determining absolute amounts of proteins is crucial for several reasons:
 
 - **Systems Biology Modeling:** Accurate protein concentrations are essential for constructing quantitative models of cellular processes, enabling a deeper understanding of biological systems.
 
