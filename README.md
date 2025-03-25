@@ -5,9 +5,9 @@
 ![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
 
 # Table of Contents
-- [Tutorial & Documentation site](# Tutorial & Documentation)
-- [Test datasets & Jupyter Notebook tutorial](# Tutorial (Jupyter Notebook))
-- [Library features](# Library features)
+- [Tutorial & Documentation site](#Tutorial & Documentation)
+- [Test datasets & Jupyter Notebook tutorial](#Tutorial (Jupyter Notebook))
+- [Library features](#Library features)
 
 # Tutorial & Documentation
 
