@@ -79,7 +79,7 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 - **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
 - **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
 - **Enrichment** `Optional`: Boolean (True or False). Samples that have been enriched should be specified as True
-- **EnrichmentDirection** `Optional`: Enrichment or Concentration (see Supplementary Material).
+- **EnrichmentMode** `Optional`: Enrichment or Concentration (see Supplementary Material).
 - **StdDilution** (Optional): This parameter specifies how many times the stock solution of enrichment standards has been diluted before adding it to the sample. If the standards were not diluted before addition, specify 1. Only used when the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added. 
 - **StdVolume** (Optional): Volume of enrichment standards (µL) added to the sample. Only used in case the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added.
 
