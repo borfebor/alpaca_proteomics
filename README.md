@@ -6,7 +6,7 @@
 
 # Table of Contents
 - [Tutorial & Documentation site](#Documentation)
-- [Test datasets & Jupyter Notebook tutorial](#Tutorial (Jupyter Notebook))
+- [Test datasets & Jupyter Notebook tutorial](#Test it)
 - [Library features](#Library features)
 
 # Documentation
@@ -27,7 +27,7 @@ from alpaca_proteomics import alpaca
 
 Stay tuned, the paper is submitted.
 
-# Tutorial (Jupyter Notebook)
+# Test it
 
 A data analysis using Jupyter Notebooks is described [here](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/Tutorial.ipynb) using the dataset published in [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 
