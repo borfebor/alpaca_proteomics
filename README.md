@@ -6,8 +6,8 @@
 
 # Table of Contents
 - [Tutorial & Documentation site](#Documentation)
-- [Test datasets & Jupyter Notebook tutorial](#Test it)
-- [Library features](#Library features)
+- [Usage Example](#Usage-Example)
+- [Library features](#Features)
 
 # Documentation
 
@@ -27,7 +27,7 @@ from alpaca_proteomics import alpaca
 
 Stay tuned, the paper is submitted.
 
-# Test it
+# Usage Example
 
 A data analysis using Jupyter Notebooks is described [here](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/Tutorial.ipynb) using the dataset published in [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 
@@ -37,7 +37,7 @@ Example datasets are available in the following [folder](https://github.com/borf
 - **Enriched_example.txt**: Exoproteome dataset from [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 - **Membrane_example.txt**: Membrane proteome dataset from [Antelo-Varela et al. 2019. Anal. Chem.](https://doi.org/10.1021/acs.analchem.9b02869)
 
-# Library features
+# Features
 
 ### Requirements
 
