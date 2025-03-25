@@ -7,7 +7,7 @@
 # Table of Contents
 - [Tutorial & Documentation site](#Documentation)
 - [Usage Example](#Usage-Example)
-- [Library features](#Features)
+- [Library features](#Library-Features)
 
 # Documentation
 
@@ -37,7 +37,7 @@ Example datasets are available in the following [folder](https://github.com/borf
 - **Enriched_example.txt**: Exoproteome dataset from [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 - **Membrane_example.txt**: Membrane proteome dataset from [Antelo-Varela et al. 2019. Anal. Chem.](https://doi.org/10.1021/acs.analchem.9b02869)
 
-# Features
+# Library-Features
 
 ### Requirements
 
