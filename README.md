@@ -4,6 +4,11 @@
 
 ![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
 
+# Table of Contents
+- [Tutorial & Documentation site](# Tutorial & Documentation)
+- [Test datasets & Jupyter Notebook tutorial](# Tutorial (Jupyter Notebook))
+- [Library features](# Library features)
+
 # Tutorial & Documentation
 
 📘 [Documentation and Tutorial](https://borfebor.github.io/alpaca_proteomics/)
@@ -32,7 +37,7 @@ Example datasets are available in the following [folder](https://github.com/borf
 - **Enriched_example.txt**: Exoproteome dataset from [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 - **Membrane_example.txt**: Membrane proteome dataset from [Antelo-Varela et al. 2019. Anal. Chem.](https://doi.org/10.1021/acs.analchem.9b02869)
 
-# Documentation
+# Library features
 
 ### Requirements
 
