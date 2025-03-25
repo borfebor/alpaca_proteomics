@@ -5,7 +5,7 @@
 ![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
 
 # Table of Contents
-- [Tutorial & Documentation site](#Documentation)
+- [Documentation](#Documentation)
 - [Usage Example](#Usage-Example)
 - [Library features](#Library-Features)
 
