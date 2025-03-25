@@ -4,6 +4,10 @@
 
 ![Alpaca pipeline modules](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/alpaca_pipeline.png)
 
+# Tutorial & Documentation
+
+📘 [Documentation and Tutorial](https://borfebor.github.io/alpaca_proteomics/)
+
 ## Getting started
 
 ```Python
@@ -18,7 +22,7 @@ from alpaca_proteomics import alpaca
 
 Stay tuned, the paper is submitted.
 
-# Tutorial
+# Tutorial (Jupyter Notebook)
 
 A data analysis using Jupyter Notebooks is described [here](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/Tutorial.ipynb) using the dataset published in [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 
@@ -55,17 +59,17 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 
 **Table 1.** Experimental parameters table. This example covers all possible columns. Nonetheless, not all columns are necessary. For example, Enrichment columns (EnrichmentDirection, StdDilution, StdVolume) are only used if any enrichment step was performed. More information about this is described in the Enrichment section.
 
-| Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentDirection | StdDilution | StdVolume |
+| Condition   | SampleVolume | ProteinConcentration | AmountMS | CellsPerML | TotalCultureVolume | ProteinSRM | fmolSRM | Enrichment | EnrichmentMode | StdDilution | StdVolume |
 |-------------|--------------|----------------------|----------|------------|--------------------|------------|---------|------------|---------------------|-------------|-----------|
 | Cond1_t0    | 2.31         | 2.99                 | 9.67     | 4.54       | 7.54               | TNAMLN     | 4.44    | False      |                 | 3.96        | 1.22      |
 | Cond2_t1    | 2.50         | 0.20                 | 4.10     | 5.13       | 2.62               | AJFVYC     | 4.85    | True       | Enrichment                | 2.43        | 1.51      |
 | Cond3_t2    | 7.38         | 6.56                 | 2.77     | 3.66       | 3.80               | BYEKSC     | 9.71    | True       | Concentration                | 5.71        | 8.53      |
 
-- **Condition**: Condition in which 
+- **Condition**: Identifier for the condition or timepoint in which the parameters were applied.
 - **SampleVolume**: Protein extract volume (µL) used for protein digestion.
 - **ProteinConcentration**: Determined protein concentration (µg/µl) in the sample.
-- **AmountMS**: Protein amount (µg) injected in the MS.
-- **CellsPerML**: Measured cells per mL of culture.
+- **AmountMS**: Sample amount (in µg) injected into the mass spectrometer.
+- **CellsPerML**: Determined number of cells per mL in the original culture.
 - **TotalCultureVolume**: Total cultivation volume (µL).
 - **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
 - **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
