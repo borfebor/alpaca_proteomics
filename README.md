@@ -23,6 +23,34 @@ pip install alpaca-proteomics
 from alpaca_proteomics import alpaca
 ```
 
+## GUI version
+
+Check our GUI version on the [🦙 **alpaca app**](https://alpaca.nube.uni-greifswald.de/) or run it locally using [Docker](www.docker.com/get-started):
+
+1. Ensure Docker is Installed and Running
+Make sure you have Docker installed on your system and that the Docker daemon is running.
+
+2. Clone and Build the Application
+
+```bash
+# Clone the repository
+git clone https://github.com/borfebor/alpaca_app.git
+
+# Navigate to the folder containing the cloned repository
+cd alpaca_app
+
+# Build the Alpaca app (the -t flag specifies the name of the Docker image)
+docker build -t alpaca-app . 
+
+# Start the Alpaca app from the terminal
+docker run -p 8501:8501 alpaca-app
+```
+
+3. Access the Web Interface:
+Once the container is running, open the following link in your browser:
+[http://localhost:8501/](http://localhost:8501/)
+
+
 ## Cite us
 
 Stay tuned, the paper is submitted.
@@ -31,6 +59,12 @@ Stay tuned, the paper is submitted.
 
 A data analysis using Jupyter Notebooks is described [here](https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/Tutorial.ipynb) using the dataset published in [Ferrero-Bordera et al. 2024. Microbiology Spectrum](https://doi.org/10.1128/spectrum.02616-23)
 
+## Step-by-step protocols
+
+1. [Pre-processing Proteomics Data with the Alpaca Pipeline](https://www.protocols.io/view/pre-processing-proteomics-data-with-the-alpaca-pip-dm6gp95j5vzp/v1)
+2. [Absolute Quantification of Proteome Abundances with the Alpaca Pipeline](https://www.protocols.io/view/absolute-quantification-of-proteome-abundances-wit-5jyl8dx57g2w/v1)
+3. [Integration of Sample Preparation and Subcellular Fraction Enrichment in Alpaca](https://www.protocols.io/view/integration-of-sample-preparation-and-subcellular-j8nlk9z46v5r/v1)
+   
 ## Example datasets
 
 Example datasets are available in the following [folder](https://github.com/borfebor/alpaca_app/tree/main/Datasets).
