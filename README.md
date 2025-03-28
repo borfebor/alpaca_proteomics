@@ -6,12 +6,17 @@
 
 # Table of Contents
 - [Documentation](#Documentation)
-- [Getting started](##Getting-started)
-- [GUI version](##GUI-version)
+   - [Getting started](##Getting-started)
+   - [GUI version](##GUI-version)
 - [Usage Example](#Usage-Example)
-- [Step-by-step protocols](##Step-by-step -rotocols)
-- [Example datasets](##Example-datasets)
+   - [Step-by-step protocols](##Step-by-step-rotocols)
+   - [Example datasets](##Example-datasets)
 - [Library features](#Library-Features)
+   - [Input data requirements](##Input-Data-Requirements)
+   - [Data importation & pre-processing](##Data-Importation-&-Pre-processing)
+   - [Protein quantification](##Protein-Quantification)
+   - [Integration of sample preparation details ](##Data-Integration)
+
 
 # Documentation
 
@@ -93,8 +98,8 @@ Required packages and last tested working versions:
 ## Input Data Requirements
 
 - **Protein Groups** file containing the protein Groups and the quantified intensities as `.csv`, `.txt` or `.xlsx`.
-- **Quantification Standards** file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & StdConcentration (µg/µl). See Quantification for more details.
-- **Enrichment Standards** (Optional) file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & Mix concentration (µg/µl). See Enrichment for more details.
+- **Quantification Standards** file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & Amount (fmol). See Quantification for more details.
+- **Enrichment Standards** (Optional) file as `.csv`, `.txt` or `.xlsx`. It requires 3 columns for a proper execution (Accession, MW (kDa) & StdConcentration (µg/µl). See Enrichment for more details.
 
 #### Labwork input
 
@@ -116,8 +121,8 @@ Experimental details (in our example `params.txt`) can be added as txt, csv or x
 - **TotalCultureVolume**: Total cultivation volume (µL).
 - **ProteinSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). This corresponds to the accession of measured protein in SRM to calculate the enrichment.
 - **fmolSRM** (Optional): If the enrichment of a subcellular fraction has been calculated using targeted proteomics (SRM). Fmol of the proteins measured in the targeted proteomics measurements. 
-- **Enrichment** `Optional`: Boolean (True or False). Samples that have been enriched should be specified as True
-- **EnrichmentMode** `Optional`: Enrichment or Concentration (see Supplementary Material).
+- **Enrichment** `Optional`: Boolean (True or False). Samples that have been enriched should be specified as True.
+- **EnrichmentMode** `Optional`: Enrichment or Concentration (see Supplementary Material, [integration protocol](https://www.protocols.io/view/integration-of-sample-preparation-and-subcellular-j8nlk9z46v5r/v1), or the [documentation](https://borfebor.github.io/alpaca_proteomics/) for more details).
 - **StdDilution** (Optional): This parameter specifies how many times the stock solution of enrichment standards has been diluted before adding it to the sample. If the standards were not diluted before addition, specify 1. Only used when the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added. 
 - **StdVolume** (Optional): Volume of enrichment standards (µL) added to the sample. Only used in case the enrichment is calculated through the function alpaca.gathers() details of the preparation of the used proteins should be added.
 
@@ -180,4 +185,4 @@ This approach was described by [Ferrero-Bordera et al. 2024](https://doi.org/10.
 
 This module connects the protein amounts quantified in the sample and the sample preparation. Thus, allowing the calculation of protein amounts to the original state (e.g. bacterial culture, raw culture supernatant). This step brings deeper insights to the user based on the known experimental parameters, yielding highly valuable data (e.g., molecules per cell, fmol / µmol of protein extract)
 
-> alpaca.**wool**(): this function integrates the sample preparation details with the quantified proteins injected in the MS.
+> alpaca.**wool**(): This function integrates the sample preparation details with the quantified proteins injected in the MS.
