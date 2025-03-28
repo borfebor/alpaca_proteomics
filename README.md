@@ -6,7 +6,11 @@
 
 # Table of Contents
 - [Documentation](#Documentation)
+- [Getting started](##Getting-started)
+- [GUI version](##GUI-version)
 - [Usage Example](#Usage-Example)
+- [Step-by-step protocols](##Step-by-step -rotocols)
+- [Example datasets](##Example-datasets)
 - [Library features](#Library-Features)
 
 # Documentation
