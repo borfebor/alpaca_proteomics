@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#additional-documentation" class="md-skip">
+        <a href="#tutorial" class="md-skip">
           Skip to content
         </a>
       
@@ -485,6 +485,84 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-import-and-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data import and formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assistance-on-the-analysis-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assistance on the analysis (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-pre-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data pre-processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-protein-quantification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchor protein quantification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proteome-fraction-enrichment-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proteome fraction enrichment (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -654,6 +732,84 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-import-and-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data import and formatting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assistance-on-the-analysis-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assistance on the analysis (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-pre-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data pre-processing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anchor-protein-quantification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anchor protein quantification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experimental details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proteome-fraction-enrichment-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proteome fraction enrichment (Optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -673,15 +829,15 @@
   
 
 
-<h1 id="additional-documentation">Additional documentation</h1>
+<h1 id="tutorial">Tutorial</h1>
 <h2 id="step-by-step-protocols">Step-by-step protocols</h2>
 <ol>
 <li><a href="https://www.protocols.io/view/pre-processing-proteomics-data-with-the-alpaca-pip-dm6gp95j5vzp/v1">Pre-processing Proteomics Data with the Alpaca Pipeline</a></li>
 <li><a href="https://www.protocols.io/view/absolute-quantification-of-proteome-abundances-wit-5jyl8dx57g2w/v1">Absolute Quantification of Proteome Abundances with the Alpaca Pipeline</a></li>
 <li><a href="https://www.protocols.io/view/integration-of-sample-preparation-and-subcellular-j8nlk9z46v5r/v1">Integration of Sample Preparation and Subcellular Fraction Enrichment in Alpaca</a></li>
 </ol>
-<h1 id="usage-example">Usage example</h1>
-<h2 id="data-import-and-formatting">Data import and formatting</h2>
+<h2 id="usage-example">Usage example</h2>
+<h3 id="data-import-and-formatting">Data import and formatting</h3>
 <p>Alpaca works with unprocessed proteomics datasets from MaxQuant. The package takes the file <code>proteinGroups.txt</code>, which can be found in the combined folder of MaxQuant output. This dataset is from the exoproteome data published in <a href="https://doi.org/10.1128/spectrum.02616-23">Ferrero-Bordera et al. 2024. Microbiology Spectrum</a>.</p>
 <p>This usage example is available as a Jupyter Notebook in <a href="https://github.com/borfebor/alpaca_proteomics/blob/main/Tutorial/Tutorial.ipynb">our GitHub repository</a> </p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">alpaca_proteomics</span><span class="w"> </span><span class="kn">import</span> <span class="n">alpaca</span>
@@ -822,7 +978,7 @@ Dataset formated for further analysis and visualisation.
 </table>
 </div>
 
-<h2 id="anchor-protein-quantification">Anchor protein quantification</h2>
+<h3 id="anchor-protein-quantification">Anchor protein quantification</h3>
 <p>Absolute quantification using Alpaca is optimised for label-free methods, relying on the addition of a set of anchor proteins at a known amount. </p>
 <p><strong>Table 1.</strong> Format for the file describing the stock solution of anchor proteins.</p>
 <table>
@@ -878,7 +1034,7 @@ Dataset formated for further analysis and visualisation.
 </span></code></pre></div>
 <p><img alt="png" src="../assets/Tutorial_12_0.png" /></p>
 <p><code>alpaca.census()</code> adds a column to the processed data with the calculated mol amounts present in the measured samples.</p>
-<h2 id="experimental-details">Experimental details</h2>
+<h3 id="experimental-details">Experimental details</h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sample_prep</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;params.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">sample_prep</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
 </span></code></pre></div>
@@ -946,7 +1102,7 @@ Dataset formated for further analysis and visualisation.
 </tr>
 </tbody>
 </table>
-<h2 id="proteome-fraction-enrichment-optional">Proteome fraction enrichment (Optional)</h2>
+<h3 id="proteome-fraction-enrichment-optional">Proteome fraction enrichment (Optional)</h3>
 <p>In case the study focuses in a fraction of the proteome (e.g., membrane proteome or exoproteome), it is likely that during the sample preparation an enrichment step was performed. This module allows to translate the enrichment step to the data based on how the samples were prepared. </p>
 <p><code>Enrichment factors</code> are calculated based on the fmol quantified in the enriched sample to the raw or non-enriched sample:</p>
 <p>$$
@@ -1058,7 +1214,7 @@ $$</p>
 <div class="language-text highlight"><pre><span></span><code>Enrichment factor for condition Before_Induction: 17.97
 Enrichment factor for condition Control: 34.65
 </code></pre></div>
-<h2 id="data-integration">Data integration</h2>
+<h3 id="data-integration">Data integration</h3>
 <p>This module connects the protein amounts quantified in the sample and the sample preparation. Thus, allowing to calculate protein amounts to the original state (e.g. bacterial culture, raw culture supernatant). This step yields absolute quantification data (e.g., molecules per cell, fmol / µmol of protein extract)</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">alpaca</span><span class="o">.</span><span class="n">wool</span><span class="p">(</span><span class="n">quant_df</span><span class="p">,</span> <span class="n">sample_prep_updated</span><span class="p">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
