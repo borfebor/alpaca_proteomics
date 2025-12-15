@@ -62,7 +62,7 @@ Once the container is running, open the following link in your browser:
 
 ## Cite us
 
-Stay tuned, the paper is submitted.
+Ferrero‐Bordera, B., Becher, D., & Maaß, S. (2025). Alpaca. A Simplified and Reproducible Python‐Based Pipeline for Absolute Proteome Quantification Data Mining. Proteomics, 25(9-10), e202400417. [https://doi.org/10.1002/pmic.202400417](https://doi.org/10.1002/pmic.202400417)
 
 # Usage Example
 
